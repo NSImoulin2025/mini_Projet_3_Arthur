@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    background: #ff4b2b;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+}
+
+.conteneur {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+    width: 80%;
+    max-width: 400px;
+}
+
+.conteneur:hover {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+h1 {
+    font-size: 20px;
+    color: #ffd700;
+}
+
+
+#blague {
+    font-size: 16px;
+    margin: 15px 0;
+}
+
+
+button {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background: #00c6ff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ffcc00;
+    color: black;
+}
+
+select {
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    background: #ffd700;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+select:hover {
+    background: #ffcc00;
+}
+
+label {
+    font-size: 14px;
+    color: white;
+}
+
+.choix_langue {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de Blagues</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <div class="conteneur" id="boite_blague">
+        <h1>Blague du jour</h1>
+        <p id="joke">{{ joke }}</p>
+
+        <div class="choix-langue">
+            <label for="langue">🌍 Langue :</label>
+            <select id="langue">
+                <option value="fr">Français</option>
+                <option value="en">Anglais</option>
+                <option value="es">Espagnol</option>
+            </select>
+        </div>
+    </div>
+
+    <script>
+        // Ajoute un écouteur d'événement pour changer la blague quand on clique sur la boîte
+        document.getElementById("boite_blague").addEventListener("click", obtenirBlague);
+
+        // Ajoute un écouteur d'événement pour changer la blague quand on change la langue
+        document.getElementById("langue").addEventListener("change", obtenirBlague);
+
+        //Fonction qui récupère une nouvelle blague en fonction de la langue sélectionnée.
+        //Elle envoie une requête au serveur Flask et met à jour le texte de la blague.
+        
+        function obtenirBlague() {
+            let langue = document.getElementById("langue").value; 
+
+
+            fetch(`/joke?lang=${langue}&t=${Date.now()}`) 
+                .then(response => response.text()) 
+                .then(blague => {
+                    document.getElementById("joke").innerText = blague; 
+                })
+                .catch(error => console.error("Erreur :", error)); 
+        }
+    </script>
+</body>
+</html>
